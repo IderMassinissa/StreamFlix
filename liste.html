@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamFlix — Ma liste</title>
+    <meta
+      name="description"
+      content="Retrouvez les séries que vous avez sélectionnées, ajustez leur priorité et envoyez votre sélection."
+    />
+  </head>
+  <body>
+    <header>
+      <h1>StreamFlix</h1>
+
+      <button
+        type="button"
+        id="bouton-menu"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        Menu
+      </button>
+
+      <nav id="menu-principal">
+        <ul>
+          <li><a href="index.html">Catalogue</a></li>
+          <li>
+            <a href="liste.html" aria-current="page">Ma liste</a>
+            <span id="compteur-liste">0</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Ma liste</h2>
+        <div id="contenu-liste"></div>
+      </section>
+
+      <section>
+        <h2>Envoyer ma sélection</h2>
+        <button type="button" id="bouton-envoyer-selection">Envoyer</button>
+        <p id="statut-envoi" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>StreamFlix</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

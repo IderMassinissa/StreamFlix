@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StreamFlix — Catalogue de séries</title>
+    <meta
+      name="description"
+      content="Découvrez et recherchez des séries, filtrez par genre et triez par note ou par année sur StreamFlix."
+    />
+
+    <meta property="og:title" content="StreamFlix — Catalogue de séries" />
+    <meta
+      property="og:description"
+      content="Découvrez et recherchez des séries, filtrez par genre et triez par note ou par année."
+    />
+    <meta property="og:image" content="assets/images/og-catalogue.jpg" />
+  </head>
+  <body>
+    <header>
+      <h1>StreamFlix</h1>
+
+      <button
+        type="button"
+        id="bouton-menu"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        Menu
+      </button>
+
+      <nav id="menu-principal">
+        <ul>
+          <li><a href="index.html" aria-current="page">Catalogue</a></li>
+          <li>
+            <a href="liste.html">Ma liste</a> <span id="compteur-liste">0</span>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Recherche et filtres</h2>
+        <form>
+          <input
+            type="search"
+            id="recherche-titre"
+            name="recherche-titre"
+            minlength="2"
+            placeholder="Rechercher une série..."
+            aria-label="Rechercher une série par titre"
+          />
+
+          <label for="filtre-genre">Genre</label>
+          <select id="filtre-genre" name="filtre-genre">
+            <option value="tous">Tous les genres</option>
+          </select>
+
+          <label for="tri-catalogue">Trier par</label>
+          <select id="tri-catalogue" name="tri-catalogue">
+            <option value="note-desc">Note décroissante</option>
+            <option value="note-asc">Note croissante</option>
+            <option value="annee-desc">Année décroissante</option>
+            <option value="annee-asc">Année croissante</option>
+          </select>
+        </form>
+      </section>
+
+      <section>
+        <h2>Catalogue</h2>
+        <p id="statut-catalogue" role="status" aria-live="polite"></p>
+        <div id="grille-catalogue"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>StreamFlix</p>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
