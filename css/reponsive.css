@@ -1,0 +1,13 @@
+/* Tablette : 768px à 1024px */
+@media (min-width: 768px) {
+  #grille-catalogue {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop : plus de 1024px */
+@media (min-width: 1024px) {
+  #grille-catalogue {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
