@@ -1,0 +1,122 @@
+:root {
+  --couleur-primaire: #e50914;
+  --couleur-primaire-hover: #f6121d;
+  --couleur-secondaire: #221f1f;
+  --couleur-fond: #141414;
+  --couleur-texte: #f5f5f5;
+  --couleur-erreur: #ff6b6b;
+
+  --espace-1: 0.5rem;
+  --espace-2: 1rem;
+  --espace-3: 1.5rem;
+  --espace-4: 2rem;
+
+  --rayon: 8px;
+
+  --taille-texte-base: 1rem;
+  --taille-texte-titre: 1.75rem;
+  --taille-texte-sous-titre: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--couleur-fond);
+  color: var(--couleur-texte);
+  font-family: system-ui, sans-serif;
+  font-size: var(--taille-texte-base);
+}
+
+h1 {
+  font-size: var(--taille-texte-titre);
+}
+
+h2 {
+  font-size: var(--taille-texte-sous-titre);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--espace-2);
+  background: var(--couleur-secondaire);
+}
+
+main {
+  padding: var(--espace-2);
+}
+
+footer {
+  padding: var(--espace-2);
+  text-align: center;
+}
+
+/* Grille catalogue : base mobile */
+#grille-catalogue {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espace-3);
+}
+
+/* Carte série */
+.carte {
+  background: var(--couleur-secondaire);
+  border-radius: var(--rayon);
+  padding: var(--espace-2);
+  transition: transform 0.2s ease;
+}
+
+.carte:hover {
+  transform: translateY(-4px);
+}
+
+.carte img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: var(--rayon);
+}
+
+/* Boutons */
+button {
+  background: var(--couleur-primaire);
+  color: var(--couleur-texte);
+  border: none;
+  border-radius: var(--rayon);
+  padding: var(--espace-1) var(--espace-2);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--couleur-primaire-hover);
+}
+
+/* Les 4 états réseau */
+.indicateur-chargement {
+  padding: var(--espace-2);
+  text-align: center;
+}
+
+.etat-vide {
+  padding: var(--espace-2);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.etat-erreur {
+  padding: var(--espace-2);
+  color: var(--couleur-erreur);
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
